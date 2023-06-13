@@ -1,0 +1,257 @@
+/* –––––––––––––––––––––––––––––––––––––––
+
+SERVICES
+
+–––––––––––––––––––––––––––––––––––––––– */
+.services{
+  --card-size:32rem;
+  background:#f6f6f6;
+  &.bg--dark{
+    background:$primary;
+    color:white;
+  }
+}
+.featured-services{
+  .featured-service{
+    background:white;
+    color:$primary;
+    overflow:hidden;
+    cursor:pointer;
+    .service-preview{
+      width:100%;
+      height:100%;
+      .service-preview_inner-text{
+        z-index:2;
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        padding:3rem;
+        h4{
+          z-index:0;
+        }
+        p{
+          color:$primary;
+        }
+        .rolling-text{
+          position:relative;
+          p{
+            position:absolute;
+            @include transition(all 0.8s $easeOutExpo);
+            will-change:transform;
+            &.snippet{
+              @include opacity(1);
+              @include transform(translateY(0));
+            }
+            &.reveal{
+              @include opacity(0);
+              @include transform(translateY(15px));
+            }
+          }
+        }
+      }
+      img{
+        z-index:0;
+        display:block;
+        position:absolute;
+        bottom:-40px;
+        right:-30px;
+        width:80%;
+        height:auto;
+        border-radius:10px;
+        @include transform(scale(1) rotate(-15deg));
+        @include transition(all 0.8s $easeOutExpo);
+        will-change: transform;
+      }
+    }
+    &:hover{
+      .service-preview {
+        .service-preview_inner-text{
+          p{
+            &.snippet{
+              @include opacity(0);
+              @include transform(translateY(-15px));
+            }
+            &.reveal{
+              @include opacity(1);
+              @include transform(translateY(0));
+            }
+          }
+        }
+        img{
+          @include transform(scale(0.8) rotate(-15deg) translate3d(60px,60px,0));
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+.all-services{
+  .all-services_items{
+    ul{
+      list-style:none;
+      li{
+        font-size:1.7rem;
+        line-height:1.5;
+        margin-bottom:10px;
+        &:last-child{
+          margin-bottom:0;
+        }
+      }
+    }
+  }
+}
+.google-partner{
+  display:none;
+  padding-top:60px;
+  margin-top:60px;
+  img{
+    display:block;
+    //height:auto;
+    padding-right:30px;
+    margin-right:30px;
+    border-right:1px solid rgba(0,0,0,0.2);
+  }
+}
+
+@media(max-width:1440px){
+  .all-services{
+    .all-services_items{
+      ul{
+        li{
+          font-size:18px;
+          margin-bottom:8px;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width:1280px){
+  .services{
+    .section-heading{
+      margin-bottom:40px;
+    }
+  }
+  .featured-services{
+    .col-1-2{
+      height:calc(50vh - 2.5vh);
+      max-height:360px;
+      min-height:360px;
+    }
+    .service-preview{
+      .service-preview_inner-text{
+        padding:40px;
+        h4{
+          font-size:25px;
+          letter-spacing:-0.25px;
+        }
+      }
+    }
+    .service-reveal{
+      padding:40px;
+      .service-reveal_inner-text{
+        h4{
+          font-size:20px;
+          letter-spacing:-0.15px;
+        }
+      }
+    }
+  }
+}
+
+
+@media(max-width:750px){
+  .featured-services{
+    margin-top:40px;
+    .container{
+      padding:0;
+    }
+    .featured-service{
+      h4{
+        font-size:30px;
+      }
+      .service-label{
+        top:14px;
+        left:10px;
+      }
+      .service-close-btn{
+        top:10px;
+        right:10px;
+      }
+    }
+    .row{
+      margin-top:0;
+      margin-bottom:0;
+    }
+    .col-1-2{
+      width:100%;
+      float:none;
+      height:400px;
+      max-height:400px;
+      margin-top:15px;
+    }
+    .service-info{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      padding:15px;
+      h5{
+        margin-bottom:15px;
+      }
+    }
+  }
+  .all-services{
+    margin-top:50px;
+  }
+  .google-partner{
+    .container-small.flex-v{
+      display:block;
+    }
+    img{
+      margin-right:0;
+      margin-bottom:30px;
+    }
+  }
+
+}
+
+@media(max-width:480px){
+  .featured-services{
+    .col-1-2{
+      max-height:320px;
+      min-height:320px;
+    }
+    .service-preview{
+      .service-preview_inner-text{
+        padding:30px 20px;
+        h4{
+          font-size:22px;
+          letter-spacing:-0.25px;
+        }
+      }
+    }
+    .service-reveal{
+      padding:20px;
+      .service-reveal_inner-text{
+        h4{
+          font-size:18px;
+          letter-spacing:-0.15px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+

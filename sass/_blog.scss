@@ -1,0 +1,36 @@
+.blog{
+  .blog-stats{
+    display:flex;
+    gap:0.5rem;
+    font-size:1.4rem;
+  }
+}
+.blog__featured{
+  display:grid;
+  gap:2rem;
+  @media(min-width:720px){
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media(min-width:960px){
+    gap:3rem;
+  }
+}
+.blog__featured-item{
+  &:hover{
+    .blog__featured-item-image{
+      img{
+        @include transform(scale(1.1));
+      }
+    }
+  }
+}
+.blog__featured-item-image{
+  border-radius:10px;
+  overflow:hidden;
+  background:$primary;
+  img{ 
+    display:block;
+    @include transition(all 1.6s $easeOutExpo);
+    will-change: transform;
+  }
+}

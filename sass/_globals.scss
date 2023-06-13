@@ -1,0 +1,251 @@
+/* –––––––––––––––––––––––––––––––––––––––
+
+HEADER
+
+–––––––––––––––––––––––––––––––––––––––– */
+#header{
+  z-index:9999;
+  position:sticky;
+  top:0;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  height:8rem;
+  width:100%;
+  @include transition(all 0.8s $easeOutExpo);
+  &:after{
+    content:"";
+    position:absolute;
+    display:block;
+    top:80px;
+    left:50%;
+    transform:translateX(-50%);
+    width:0;
+    height:0.5px;
+    @include transition(all 1.2s $easeOutExpo);
+  }
+  &.hide{
+    transform: translateY(-9rem);
+  }
+  &.has-shadow{
+    &:after{
+      width:100%;
+    }
+  }
+  &[data-theme="white"]  {
+    background:white;
+    &:after{
+      background:$blue_border;
+    }
+  }
+  &[data-theme="gray"] {
+    background:#f6f6f6;
+    &:after{
+      background:$blue_border;
+    }
+  }
+  &[data-theme="primary"]  {
+    background:$primary;
+    &:after{
+      background:rgba(255,255,255,0.35);
+    }
+    .header_logo{
+      #logo{
+        fill:white;
+      }
+    }
+    .header_menu{
+      li{
+        a{
+          color:white;
+        }
+      }
+    }
+  }
+}
+.header_logo{
+  margin-bottom:-1.5rem;
+  padding-left:3rem;
+  #logo{
+    fill:$primary;
+    @include transition(all 0.6s $easeOutExpo);
+  }
+}
+.header_menu{
+  display:flex;
+  align-items: center;
+  gap:4rem;
+  height:8rem;
+  li{
+    position:relative;
+    display:flex;
+    align-items: center;
+    height:8rem;
+    font-weight:500;
+    a{
+      color:$primary;
+      @include transition(all 0.6s $easeOutExpo);
+    }
+    &.btn-lets-talk{
+      height:6rem;
+      font-size:1.6rem;
+      font-weight:900;
+      letter-spacing:-0.025em;
+      padding-inline:3rem;
+      background:$red;
+      color:white;
+      border-radius:0.6rem;
+      margin-right:1rem;
+      @include transition(background 0.8s $easeOutExpo);
+      &:hover{
+        background:darken($red, 8%);
+      }
+    }
+  }
+}
+
+button.menu-btn_tiny{
+  margin-right:0;
+  cursor:pointer;
+  position:relative;
+  height:40px;
+  width:70px;
+  text-align:center;
+  background:$red;
+  font-family:"Roboto", sans-serif;
+  font-size:15px;
+  font-weight:900;
+  letter-spacing:-0.15px;
+  color:$light-gray;
+  border:none;
+  appearance:none;
+  @include transition(all 0.8s $easeOutExpo);
+  &:focus{
+    outline:none;
+  }
+  &:hover{
+    .menu-btn-bg{
+      background:darken(#cf3d3d , 5%);
+    }
+  }
+}
+/* –––––––––––––––––––––––––––––––––––––––
+
+FOOTER
+
+–––––––––––––––––––––––––––––––––––––––– */
+footer{
+  min-height:500px;
+  background-color:$blue_dark;
+  color:white;
+  margin-top:-1px; // fix smooth scrolling causes 1px flicker bewteen footer and above section
+  margin-bottom:-80px;
+  .container-med{
+    padding-inline:4rem;
+  }
+  .footer__menu{
+    ul{
+      display:flex;
+      gap:max(3vw, 4rem);
+      font-size:3rem;
+      font-weight:500;
+      letter-spacing:-0.02em;
+      li:last-child{
+        margin-left: auto;
+        a{
+          display:flex;
+          align-items: center;
+        }
+        i{
+          font-size:2rem;
+          margin-left:1rem;
+        }
+      }
+    }
+  }
+  .footer__links{
+    display:flex;
+    justify-content: space-between;
+    padding-block:4rem;
+    margin-block:4rem;
+    border-top:1px solid rgba(255,255,255,0.3);
+    border-bottom:1px solid rgba(255,255,255,0.3);
+    overflow:hidden;
+    h5{
+      font-size:1.4rem;
+      color:rgba(255,255,255,0.6);
+      margin-bottom:1.5rem;
+    }
+    span, a{
+      display:block;
+    }
+    .social-links{
+      a{
+        display:inline-block;
+        margin-right:0.5rem;
+        font-size:1.2rem;
+        &:last-of-type{
+          margin-right:0;
+        }
+        span{
+          display:flex;
+          align-items: center;
+          justify-content: center;
+          width:3rem;
+          height:3rem;
+          border-radius:3rem;
+          border:1px solid rgba(255,255,255,0.5);
+          @include transition(all 0.8s $easeOutExpo)
+        }
+        &:hover{
+          span{
+            background:rgba(255,255,255,0.1);
+          }
+        }
+      }
+    }
+  }
+  .copyright{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+    margin-top:max(4vw, 6rem);
+    font-size:1.4rem;
+    color:rgba(255,255,255,0.6);
+    img{
+      display:inline-block;
+      margin-bottom:-1rem;
+    }
+  }
+}
+
+
+
+.btn--primary{
+  display:inline-flex;
+  align-items: center;
+  flex-grow: 0;
+  gap:0.5em;
+  font-size:1.4rem;
+  font-weight:500;
+  letter-spacing:-0.02em;
+  span{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:4rem;
+    height:4rem;
+    border-radius:4rem;
+    background:$blue_light--2;
+    i{
+      font-size:1.2rem;
+      color:$primary;
+    }
+  }
+}
+
+
+
+
+

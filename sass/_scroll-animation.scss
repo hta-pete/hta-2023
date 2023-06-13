@@ -1,0 +1,65 @@
+.scroll-in{
+  will-change: transform;
+  @include opacity(0);
+  @for $i from 1 through 20 {
+    &:nth-child(#{$i}) {
+      @include transform(translateY(20px * $i));
+      @include transition(transform 1.2s (0.1s * $i) $easeOutExpo, opacity 0.8s (0.1s * $i) $easeOutExpo);
+    }
+  }
+  > *{
+    will-change: transform;
+    @include opacity(0);
+    @for $i from 1 through 20 {
+      &:nth-child(#{$i}) {
+        @include transform(translateY(20px * $i));
+        @include transition(transform 1.2s (0.1s * $i) $easeOutExpo, opacity 0.8s (0.1s * $i) $easeOutExpo);
+      }
+    }
+  }
+  &[data-direction="horizontal"]{
+    > *{
+      @for $i from 1 through 20 {
+        &:nth-child(#{$i}) {
+          @include transform(translateX(80px * $i) translateY(0));
+          @include transition(transform 1.2s (0.1s * $i) $easeOutExpo, opacity 0.8s (0.1s * $i) $easeOutExpo);
+        }
+      }
+    }
+  }
+  &.is-inview{
+    @include opacity(1);
+    @include transform(translateX(0) translateY(0));
+    > *{
+      @include opacity(1);
+      @include transform(translateX(0) translateY(0));
+    }
+    &[data-direction="horizontal"]{
+      > *{
+        @include opacity(1);
+        @include transform(translateX(0) translateY(0));
+      }
+    }
+    .underline{
+      &:after{
+        width:100%;
+      }
+    }
+    &.history-timeline{
+      width:85%;
+      .beginning{
+        @include opacity(1);
+        @include transform(translateY(0));
+      }
+      .end{
+        @include opacity(1);
+        @include transform(translateY(0));
+      }
+      .time-markers{
+        span{
+          height:11px;
+        }
+      }
+    }
+  }
+}
