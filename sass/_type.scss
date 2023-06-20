@@ -8,10 +8,12 @@ html{
 }
 body{
   min-width:1280px;
-  font-size:1.5rem;
+  font-size:1.6rem;
   font-family:"Roboto", sans-serif;
   line-height:1.5;
+  font-weight:300;
   color:$primary;
+  background:$light_gray;
   -webkit-font-smoothing:antialiased;
   text-rendering: optimizeLegibility;
   overscroll-behavior-y: none;
@@ -19,14 +21,14 @@ body{
 
 
 .fs--1{
-  font-size:7rem;
+  font-size:6.5rem;
   letter-spacing:-0.05em;
 }
 .fs--2{
   font-size:6rem;
 }
 .fs--3{
-  font-size:5rem;
+  font-size:4.5rem;
 }
 .fs--4{
   font-size:3rem;
@@ -81,9 +83,9 @@ b{
     position:absolute;
     left:0;
     width:0;
-    height:0.5rem;
+    height:0.3em;
     bottom:-0.025em;
-    background:$red;
+    background:$blue_light;
     @include transition(width 0.8s 0.6s $easeOutExpo);
   }
 }

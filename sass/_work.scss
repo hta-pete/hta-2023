@@ -82,8 +82,9 @@ WORK
 }
 
 .featured-work{
-  --card-size:48rem;
+  --card-size:44rem;
   .featured-work_item{
+    aspect-ratio: 1 / 1;
     position:relative;
     color:white;
 		background:$primary;
@@ -161,18 +162,15 @@ WORK
   grid-template-columns: 2fr 1fr 1fr;
   align-items: center;
   gap:var(--grid-gap);
+  font-size:1.5rem;
 }
 .work__index-header{
   font-weight:500;
   padding-bottom:1rem;
-  border-bottom:0.5px solid rgba(255,255,255,0.35);
 }
 .work__index-list_item{
-  border-bottom:0.5px solid rgba(255,255,255,0.35);
+  border-top:0.5px solid $blue_border;
   padding-block:1rem;
-  &:last-of-type{
-    border-bottom:none;
-  }
   &:hover{
     .rolling-text{
       .snippet{

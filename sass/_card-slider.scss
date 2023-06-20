@@ -20,13 +20,37 @@
     height:var(--card-size);
     gap:var(--grid-gap);
     padding-inline: 4rem;
-		.card{
-			height:var(--card-size);
-      aspect-ratio: 1 / 1;
-      border-radius:1rem;
-      overflow:hidden;
-		}
 	}
+}
+.card{
+  height:var(--card-size);
+  border-radius:1rem;
+  overflow:hidden;
+  will-change:transform;
+	@include transition(transform 2.4s $easeOutExpo);
+  &:hover{
+    .card__toggle{
+      transform:rotate(-45deg);
+    }
+  }
+}
+.card__title{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card__toggle{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width:3rem;
+  height:3rem;
+  border-radius:50%;
+  background:#f6f6f6;
+  @include transition(transform 0.8s $easeOutExpo);
+  i{
+    font-size:1.2rem;
+  }
 }
 .card-slider__prev, .card-slider__next{
   z-index:2;

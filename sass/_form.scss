@@ -77,7 +77,7 @@ HTA MENU
     width:60%;
     height:100%;
     padding-block:12rem 6rem;
-    background:$blue_light--2;
+    background:$light_gray;
     overflow-y:scroll;
     will-change:transform;
     @include transform(translate3d(120%,0,0));

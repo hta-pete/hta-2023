@@ -33,13 +33,13 @@ HEADER
     }
   }
   &[data-theme="white"]  {
-    background:white;
+    background:$light_gray;
     &:after{
       background:$blue_border;
     }
   }
   &[data-theme="gray"] {
-    background:#f6f6f6;
+    background:$light_gray;
     &:after{
       background:$blue_border;
     }
@@ -87,16 +87,20 @@ HEADER
       @include transition(all 0.6s $easeOutExpo);
     }
     &.btn-lets-talk{
-      height:6rem;
+      display:flex;
+      align-items: center;
+      justify-content: space-between;
+      gap:1rem;
       font-size:1.6rem;
       font-weight:900;
       letter-spacing:-0.025em;
-      padding-inline:3rem;
+      padding-inline:4rem;
       background:$red;
       color:white;
-      border-radius:0.6rem;
-      margin-right:1rem;
       @include transition(background 0.8s $easeOutExpo);
+      i{
+        color:$light_gray;
+      }
       &:hover{
         background:darken($red, 8%);
       }
@@ -136,10 +140,8 @@ FOOTER
 –––––––––––––––––––––––––––––––––––––––– */
 footer{
   min-height:500px;
-  background-color:$blue_dark;
+  background-color:$blue;
   color:white;
-  margin-top:-1px; // fix smooth scrolling causes 1px flicker bewteen footer and above section
-  margin-bottom:-80px;
   .container-med{
     padding-inline:4rem;
   }
@@ -173,7 +175,6 @@ footer{
     overflow:hidden;
     h5{
       font-size:1.4rem;
-      color:rgba(255,255,255,0.6);
       margin-bottom:1.5rem;
     }
     span, a{
@@ -227,20 +228,29 @@ footer{
   align-items: center;
   flex-grow: 0;
   gap:0.5em;
-  font-size:1.4rem;
+  font-size:1.5rem;
   font-weight:500;
   letter-spacing:-0.02em;
   span{
     display:flex;
     align-items: center;
     justify-content: center;
-    width:4rem;
-    height:4rem;
-    border-radius:4rem;
-    background:$blue_light--2;
+    width:5rem;
+    height:5rem;
+    border-radius:5rem;
+    background:$blue;
     i{
       font-size:1.2rem;
-      color:$primary;
+      color:white;
+    }
+  }
+  &--light{
+    color:white;
+    span{
+      background:white;
+      i{
+        color:$blue;
+      }
     }
   }
 }
