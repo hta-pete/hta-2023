@@ -1,7 +1,7 @@
 .card-slider{
   display:flex;
   align-items: center;
-  height:var(--card-size);
+  height:calc(var(--card-size) + 1rem);
 	overflow-x:scroll;
   overflow-y:hidden;
   scroll-behavior: smooth;
@@ -17,7 +17,8 @@
 		position: absolute;
     display:flex;
 		flex-direction: row;
-    height:var(--card-size);
+    align-items:center;
+    height:calc(var(--card-size) + 1rem);
     gap:var(--grid-gap);
     padding-inline: 4rem;
 	}
@@ -25,6 +26,7 @@
 .card{
   height:var(--card-size);
   border-radius:1rem;
+  box-shadow: 0 0.5px 2px 0 rgba(0,0,0,0.2);
   overflow:hidden;
   will-change:transform;
 	@include transition(transform 2.4s $easeOutExpo);

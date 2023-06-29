@@ -1,0 +1,27 @@
+.clients{
+  background:$gray;
+  .client-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr
+  }
+  .client-grid__client{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding:3rem;
+    //border-right:0.5px solid $blue_border;
+    //border-top:0.5px solid $blue_border;
+    &:nth-child(1), &:nth-child(2), &:nth-child(3){
+      border-top:none;
+    }
+    &:nth-child(3n){
+      border-right:none;
+    }
+    img{
+      display:block;
+      max-width:100px;
+    }
+
+  }
+}

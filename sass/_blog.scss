@@ -40,7 +40,7 @@
   grid-template-columns: 2fr 1fr;
   align-items: center;
   gap:var(--grid-gap);
-  border-bottom:0.5px solid $blue_border;
+  border-bottom:0.5px solid $border-light-bg;
   padding-block:1.5rem;
   &:last-of-type{
     border-bottom:none;
@@ -52,7 +52,7 @@
   gap:2rem;
   img{
     display:block;
-    max-width:12rem;
+    max-width:14rem;
     border-radius:0.6rem;
   }
 }
